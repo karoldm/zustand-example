@@ -19,7 +19,7 @@ test("addToCart adds a product to the cart", () => {
 
 test("removeProduct remove the product from the cart", () => {
   const product1: Product = { id: "1", title: "Product 1", price: 100 };
-  const product2: Product = { id: "1", title: "Product 1", price: 100 };
+  const product2: Product = { id: "2", title: "Product 2", price: 50 };
 
   useCartStore.getState().addToCart(product1);
   useCartStore.getState().addToCart(product2);
@@ -30,7 +30,7 @@ test("removeProduct remove the product from the cart", () => {
 
   expect(useCartStore.getState().items.length).toEqual(1);
   expect(useCartStore.getState().items).toEqual([
-    { id: "1", title: "Product 1", price: 100 },
+    { id: "2", title: "Product 2", price: 50 },
   ]);
 });
 
